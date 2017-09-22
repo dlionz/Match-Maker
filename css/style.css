@@ -1,0 +1,25 @@
+/*
+Colors
+Dark Grey: #2A2D34
+Light Blue: #009DDC
+Orange: #F26430
+Purple: #6761A8
+#Green: 009B72
+*/
+
+body{
+  background-color: #009DDC;
+}
+
+#surveryBtn{
+  background-color: #F26430;
+  border-color: #F26430;
+  -webkit-transition: background-color .5s, border-color .5s; /* Safari */
+  transition: background-color .5s, border-color .5s;
+}
+
+#surveryBtn:hover{
+  background-color: #6761A8;
+  border-color: #6761A8;
+
+}
