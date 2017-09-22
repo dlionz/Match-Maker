@@ -12,6 +12,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="../../css/styleSurvey.css" type="text/css">
 
+  <!--chose  -->
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.2/chosen.css">
+
+  <!-- JS -->
+
+
 
   <title>Match Maker</title>
 </head>
@@ -29,41 +36,153 @@
         <h1>About you</h1>
         <div class="row">
           <div class="col-lg-12">
-            <div class="input-group input-lg">
-              <p>Name (Required)
-                <p>
+            <div class="form-group">
+              <p><strong>Name (Required)</strong></p>
                   <input type="text" name="" id="name" class="form-control" required="">
                   <span id="name-span" aria-hidden="true"></span>
-                  <p>Link to Photo Image (Required)</p>
+                  <p><strong>Link to Photo Image (Required)</strong></p>
                   <input type="text" name="" id="photo" class="form-control" required="">
             </div>
           </div>
         </div>
         <hr>
-
+        <!-- QUESTIONS -->
         <h2>Question 1:</h2>
-        <p>would say you are open to new experiences?</p>
-        <!-- Single button -->
-        <div class="btn-group">
-          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Action <span class="caret"></span>
-            </button>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-          </ul>
+        <p>I would say I am open to new experiences</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
         </div>
 
+        <h2>Question 2:</h2>
+        <p>If you were a number between 1 and 5 which number woud you be</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
 
+        <h2>Question 3:</h2>
+        <p>On a scale of 1 - 5 how well did you understand the plot of Blade Runner</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (Didnt see it)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (Complety got the underlying theme)</option>
+          </select>
+        </div>
+
+        <h2>Question 4:</h2>
+        <p>How likley are you to put mustard on your hotdog?</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (Not likley)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (absolutley)</option>
+          </select>
+        </div>
+
+        <h2>Question 5:</h2>
+        <p>Space is super intersting</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
+
+        <h2>Question 6:</h2>
+        <p>I would say I color outside the lines</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
+
+        <h2>Question 7:</h2>
+        <p>People say I have a strong personality</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
+
+        <h2>Question 8:</h2>
+        <p>Ive always wanted to live in New York</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
+
+        <h2>Question 9:</h2>
+        <p>Are you confident this quiz is not about hotdogs?</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
+
+        <h2>Question 10:</h2>
+        <p>Are you ready for the outcome of this quiz?</p>
+        <div class="form-group">
+          <select class="form-control" id="question1">
+            <option>1 (strongly disagree)</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5 (strongly agree)</option>
+          </select>
+        </div>
+        <hr>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+        <i class="fa fa-check-circle" aria-hidden="true"></i>
+         Submit
+        </button>
 
 
       </div>
     </div>
   </div>
 
-
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../server.js">
+  </script>
+
 </body>
 
 </html>
