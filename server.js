@@ -1,17 +1,23 @@
-//npm packages
 var express = require("express");
 var bodyParser = require("body-parser");
-var path = require("path");
 
-//server
 var app = express();
-var PORT = "3000";
+
+var PORT = process.env.PORT || 8080;
+
+// BodyParser makes it possible for our server to interpret data sent to it.
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 
-app.get('/', function (req, res) {
-  res.send(home.html);
-})
+app.use(express.static(__dirname + '/app/public'));
 
-app.listen(PORT, function(){
-  console.log("listening on port: " + PORT);
-})
+require("./app/routing/htmlRoutes")(app);
+// require("./routes/apiRoutes")(app);
+
+
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});
