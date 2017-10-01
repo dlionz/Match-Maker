@@ -12,12 +12,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
   <link rel="stylesheet" href="./css/styleSurvey.css" type="text/css">
 
-  <!--chose  -->
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.2/chosen.css">
-
-  <!-- JS -->
-
 
 
   <title>Match Maker</title>
@@ -38,10 +34,10 @@
           <div class="col-lg-12">
             <div class="form-group">
               <p><strong>Name (Required)</strong></p>
-                  <input type="text" name="" id="name" class="form-control" required="">
-                  <span id="name-span" aria-hidden="true"></span>
-                  <p><strong>Link to Photo Image (Required)</strong></p>
-                  <input type="text" name="" id="photo" class="form-control" required="">
+              <input type="text" name="" id="name" class="form-control" required="">
+              <span id="name-span" aria-hidden="true"></span>
+              <p><strong>Link to Photo Image (Required)</strong></p>
+              <input type="text" name="" id="photo" class="form-control" required="">
             </div>
           </div>
         </div>
@@ -50,7 +46,7 @@
         <h2>Question 1:</h2>
         <p>I would say I am open to new experiences</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q1">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -62,7 +58,7 @@
         <h2>Question 2:</h2>
         <p>If you were a number between 1 and 5 which number woud you be</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q2">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -74,7 +70,7 @@
         <h2>Question 3:</h2>
         <p>On a scale of 1 - 5 how well did you understand the plot of Blade Runner</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q3">
             <option>1 (Didnt see it)</option>
             <option>2</option>
             <option>3</option>
@@ -86,7 +82,7 @@
         <h2>Question 4:</h2>
         <p>How likley are you to put mustard on your hotdog?</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q4">
             <option>1 (Not likley)</option>
             <option>2</option>
             <option>3</option>
@@ -98,7 +94,7 @@
         <h2>Question 5:</h2>
         <p>Space is super intersting</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q5">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -110,7 +106,7 @@
         <h2>Question 6:</h2>
         <p>I would say I color outside the lines</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q6">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -122,7 +118,7 @@
         <h2>Question 7:</h2>
         <p>People say I have a strong personality</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q7">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -134,7 +130,7 @@
         <h2>Question 8:</h2>
         <p>Ive always wanted to live in New York</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q8">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -146,7 +142,7 @@
         <h2>Question 9:</h2>
         <p>Are you confident this quiz is not about hotdogs?</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q9">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -158,7 +154,7 @@
         <h2>Question 10:</h2>
         <p>Are you ready for the outcome of this quiz?</p>
         <div class="form-group">
-          <select class="form-control" id="question1">
+          <select class="form-control chosen-select" id="q10">
             <option>1 (strongly disagree)</option>
             <option>2</option>
             <option>3</option>
@@ -177,55 +173,94 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div id="resultsModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h2 class="modal-title"><strong>Best Match</strong></h2>
+          </div>
+          <div class="modal-body">
+            <h2 id="matchName"></h2>
+            <img id="matchImg" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
     <footer class="footer">
       <div class="container">
-          <p><a href="/api/friends">API Friends List</a> | Damien Breaux</p>
+        <p><a href="/api/friends">API Friends List</a> | Damien Breaux</p>
       </div>
     </footer>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+  <script type="text/javascript" src="../data/friends.js"></script>
   <script type="text/javascript">
-		$("#submit").on("click", function(event) {
-			event.preventDefault();
-			console.log("clicked");
-			// Here we grab the form elements
-			var newFriend = {
-				friend_name: $("#name").val().trim(),
-				friend_photo_url: $("#photo").val().trim(),
-				q1: $("#q1").val().trim(),
-				q2: $("#q2").val().trim(),
-				q3: $("#q1").val().trim(),
-				q4: $("#q2").val().trim(),
-				q5: $("#q1").val().trim(),
-				q6: $("#q2").val().trim(),
-				q7: $("#q1").val().trim(),
-				q8: $("#q2").val().trim(),
-				q9: $("#q1").val().trim(),
-				q10: $("#q2").val().trim()
-			};
-			console.log(newFriend);
-			$.post("/api/friends", newFriend,
-				function(data) {
 
-			});
-			// Clear the form when submitting
-			$("#name").val("");
-				$("#photo").val("");
-				$("#q1").val("");
-				$("#q2").val("");
-				$("#q1").val("");
-				$("#q2").val("");
-				$("#q1").val("");
-				$("#q2").val("");
-				$("#q1").val("");
-				$("#q2").val("");
-				$("#q1").val("");
-				$("#q2").val("");
-			});
-	</script>
+    // Capture the form inputs
+    $("#submit").on("click", function() {
+
+      // Form validation
+      function validateForm() {
+        var isValid = true;
+        $('.form-control').each(function() {
+          if ($(this).val() === '')
+            isValid = false;
+        });
+
+        $('.chosen-select').each(function() {
+
+          if ($(this).val() === "")
+            isValid = false
+        })
+        return isValid;
+      }
+
+      // If all required fields are filled then we create an obj
+      if (validateForm() == true) {
+
+        var userData = {
+          name: $("#name").val(),
+          image: $("#photo").val(),
+          points: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val(),
+            $("#q9").val(), $("#q10").val(),
+          ]
+        }
+
+
+        // Grab the URL of the website
+        var currentURL = window.location.origin;
+
+        // AJAX post the data to the friends API.
+        $.post(currentURL + "/api/friends", userData, function(data) {
+
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#matchName").text(data.name);
+          $('#matchImg').attr("src", data.image);
+
+          // Show the modal
+          $("#resultsModal").modal('toggle');
+
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+
+      return false;
+    });
+  </script>
+
 </body>
 
 </html>
